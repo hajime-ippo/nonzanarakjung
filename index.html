@@ -3,469 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poonsom Muangsri - Portfolio</title>
-    <!-- Google Fonts: Prompt -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <title>PoonSom Profile</title>
+
     <style>
-        /* Minimalist Color Palette & Variables */
-        :root {
-            --bg-color: #fafafa;
-            --surface-color: #ffffff;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --text-muted: #9ca3af;
-            --border-color: #e5e7eb;
-            --accent-black: #000000;
-            --accent-gray: #f3f4f6;
-            --accent-hover: #1f2937;
-            --max-width: 900px;
-            --radius: 12px;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Prompt', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
         }
 
-        /* Container */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Navigation Bar */
+        /* Navbar */
         nav {
-            position: sticky;
-            top: 0;
-            background-color: rgba(250, 250, 250, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-        }
-
-        .nav-container {
+            background-color: white;
+            padding: 18px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            border-bottom: 1px solid #e5e5e5;
         }
 
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-primary);
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav a {
             text-decoration: none;
-            letter-spacing: -0.02em;
+            color: #333;
+            margin-left: 20px;
+            font-size: 14px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            list-style: none;
+        nav a:hover {
+            color: #666;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
+        /* Main */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
 
-        .nav-links a:hover {
-            color: var(--text-primary);
+        /* Profile */
+        .profile {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 90px 0 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            background-color: var(--accent-gray);
-            color: var(--text-secondary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.25;
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-black);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            background-color: var(--surface-color);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--accent-gray);
-        }
-
-        .hero-avatar {
-            width: 180px;
-            height: 180px;
+        .profile img {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 1px solid var(--border-color);
-            background-color: var(--accent-gray);
-            flex-shrink: 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            margin-bottom: 20px;
+            border: 4px solid #f2f2f2;
         }
 
-        /* Section Layout */
-        section {
-            padding: 60px 0;
-            border-top: 1px solid var(--border-color);
+        .profile h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
-        .section-header {
-            margin-bottom: 32px;
+        .profile p {
+            color: #666;
+            font-size: 16px;
         }
 
-        .section-header h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
+        /* Sections */
+        .section {
+            background: white;
+            margin-top: 25px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .section-header p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 22px;
         }
 
-        /* About Grid */
-        .about-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 28px;
-            font-size: 0.98rem;
-            color: var(--text-secondary);
-        }
-
-        /* Skills Grid */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-        }
-
-        .skill-box {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 20px;
-        }
-
-        .skill-box h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .skill-tags {
+        /* Skills */
+        .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .tag {
-            background-color: var(--accent-gray);
-            color: var(--text-primary);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .skill {
+            background-color: #f1f1f1;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
         }
 
-        /* Hobbies Grid */
-        .hobbies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
+        /* Hobby */
+        .hobby-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .hobby-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 24px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+        .hobby {
+            background-color: #fafafa;
+            border: 1px solid #e5e5e5;
+            padding: 12px 18px;
+            border-radius: 10px;
         }
 
-        .hobby-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--text-primary);
-        }
-
-        .hobby-icon {
-            font-size: 1.8rem;
-            margin-bottom: 12px;
-        }
-
-        .hobby-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .hobby-card p {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-        }
-
-        /* Contact Section */
-        .contact-box {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius);
-            padding: 40px;
+        /* Contact */
+        .contact {
             text-align: center;
         }
 
-        .contact-box h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 8px;
+        .contact a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
         }
 
-        .contact-box p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .email-link {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: underline;
-            text-underline-offset: 4px;
+        .contact a:hover {
+            background-color: #444;
         }
 
         /* Footer */
         footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            padding: 30px;
+            color: #777;
+            font-size: 14px;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 50px 0 30px;
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 20px;
             }
 
-            .hero-avatar {
-                width: 140px;
-                height: 140px;
+            nav a {
+                margin-left: 10px;
             }
 
-            .cta-buttons {
-                justify-content: center;
+            .profile {
+                padding: 30px 20px;
             }
 
-            .nav-links {
-                gap: 16px;
+            .profile h1 {
+                font-size: 26px;
             }
+
         }
     </style>
+
 </head>
+
 <body>
 
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo">POONSOM.M</a>
-            <ul class="nav-links">
-                <li><a href="#about">เกี่ยวกับ</a></li>
-                <li><a href="#skills">ทักษะ</a></li>
-                <li><a href="#hobbies">งานอดิเรก</a></li>
-                <li><a href="#contact">ติดต่อ</a></li>
-            </ul>
+        <h2>PoonSom</h2>
+
+        <div>
+            <a href="#about">เกี่ยวกับฉัน</a>
+            <a href="#skills">ทักษะ</a>
+            <a href="#contact">ติดต่อ</a>
         </div>
     </nav>
 
+
     <div class="container">
-        
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="hero-text">
-                <span class="hero-tag">Digital Business & IT Student</span>
-                <h1>นายพูนสม ม่วงศรี</h1>
-                <p>นักศึกษาคณะเทคโนโลยีสารสนเทศ สาขานวัตกรรมธุรกิจดิจิทัล มีความชื่นชอบและสนใจด้านการเขียนเว็บ การทำธุรกิจ และเทคโนโลยียุคใหม่</p>
-                <div class="cta-buttons">
-                    <a href="mailto:poonsom.mua@spumail.net" class="btn btn-primary">✉️ ติดต่อผ่านอีเมล</a>
-                    <a href="#about" class="btn btn-secondary">ดูข้อมูลเพิ่มเติม</a>
-                </div>
-            </div>
-            <!-- รูปโปรไฟล์ของคุณ สามารถเปลี่ยนชื่อไฟล์ตรง src="profile.jpg" ได้เลยครับ -->
-            <img src="https://media.discordapp.net/attachments/734795847941881877/1547278939385499758/019CD03F-C61E-413A-B1DB-27A9503A68B2.jpg?ex=6aa2d74e&is=6aa185ce&hm=6cc0c04836511a8cbe3d4da0fdc2f11a550141f672d1ff676b2da97d68b8cd1d&=&format=webp&width=432&height=768.jpg" alt="พูนสม ม่วงศรี" class="hero-avatar">
-        </header>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="section-header">
-                <h2>เกี่ยวกับฉัน</h2>
-                <p>About Me</p>
-            </div>
-            <div class="about-card">
-                <p>
-                    สวัสดีครับ ผม **นายพูนสม ม่วงศรี** ปัจจุบันกำลังศึกษาอยู่ คณะเทคโนโลยีสารสนเทศ สาขานวัตกรรมธุรกิจดิจิทัล 
-                    ผมมีความสนใจทั้งในฝั่งของ **การพัฒนาเว็บไซต์ (Web Development)** และ **ธุรกิจดิจิทัล (Digital Business)** 
-                    มุ่งเน้นการฝึกฝนและประยุกต์ใช้ความรู้ทางเทคโนโลยีเข้ากับการสร้างสรรค์นวัตกรรมใหม่ๆ พร้อมเรียนรู้สิ่งใหม่อยู่เสมอ
-                </p>
-            </div>
+        <!-- Profile -->
+        <section class="profile">
+
+            <img 
+                src="https://media.discordapp.net/attachments/734795847941881877/1547278939385499758/019CD03F-C61E-413A-B1DB-27A9503A68B2.jpg?ex=6aa2d74e&is=6aa185ce&hm=6cc0c04836511a8cbe3d4da0fdc2f11a550141f672d1ff676b2da97d68b8cd1d&=&format=webp&width=575&height=1024"
+                alt="รูปโปรไฟล์ PoonSom"
+            >
+
+            <h1>นายพูนสม ม่วงศรี</h1>
+
+            <p>
+                นักศึกษาคณะเทคโนโลยีสารสนเทศ
+            </p>
+
+            <p>
+                สาขานวัตกรรมธุรกิจดิจิทัล
+            </p>
+
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-header">
-                <h2>ทักษะและความสามารถ</h2>
-                <p>Skills & Knowledge</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-box">
-                    <h3>💻 Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                    </div>
-                </div>
 
-                <div class="skill-box">
-                    <h3>⚙️ Programming</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">C Language</span>
-                    </div>
-                </div>
+        <!-- About -->
+        <section class="section" id="about">
 
-                <div class="skill-box">
-                    <h3>📈 Business & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Digital Business</span>
-                        <span class="tag">E-Commerce</span>
-                        <span class="tag">Git & GitHub</span>
-                    </div>
-                </div>
-            </div>
+            <h2>👋 เกี่ยวกับฉัน</h2>
+
+            <p>
+                สวัสดีครับ ผมชื่อ <b>นายพูนสม ม่วงศรี</b>
+                ปัจจุบันกำลังศึกษาอยู่คณะเทคโนโลยีสารสนเทศ
+                สาขานวัตกรรมธุรกิจดิจิทัล
+            </p>
+
+            <br>
+
+            <p>
+                ผมสนใจด้านเทคโนโลยี การเขียนโปรแกรม
+                และการพัฒนาเว็บไซต์ โดยกำลังพัฒนาความสามารถของตัวเองอยู่เสมอ
+            </p>
+
         </section>
 
-        <!-- Hobbies Section -->
-        <section id="hobbies">
-            <div class="section-header">
-                <h2>งานอดิเรกและความสนใจ</h2>
-                <p>Hobbies & Interests</p>
-            </div>
-            <div class="hobbies-grid">
-                <div class="hobby-card">
-                    <div class="hobby-icon">🎮</div>
-                    <h3>เล่นเกม</h3>
-                    <p>ผ่อนคลายความเครียด พร้อมทั้งฝึกทักษะการวางแผน แก้ไขปัญหา และการทำงานร่วมกับผู้อื่น</p>
-                </div>
 
-                <div class="hobby-card">
-                    <div class="hobby-icon">🛍️</div>
-                    <h3>ขายของออนไลน์</h3>
-                    <p>สนใจการทำธุรกิจออนไลน์ การจัดการสินค้า E-Commerce และการทำการตลาดดิจิทัล</p>
-                </div>
+        <!-- Skills -->
+        <section class="section" id="skills">
 
-                <div class="hobby-card">
-                    <div class="hobby-icon">🐱</div>
-                    <h3>เล่นกับแมว</h3>
-                    <p>ทาสแมว ใช้เวลาว่างในการดูแล เล่นกับน้องแมว และชาร์จพลังในวันหยุด</p>
-                </div>
+            <h2>💻 ความสามารถ</h2>
+
+            <div class="skills">
+
+                <div class="skill">Java</div>
+
+                <div class="skill">HTML</div>
+
+                <div class="skill">CSS</div>
+
+                <div class="skill">C (พื้นฐาน)</div>
+
             </div>
+
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-box">
-                <h3>สนใจพูดคุย หรือร่วมงานกัน?</h3>
-                <p>สามารถติดต่อผมโดยตรงทางอีเมล ได้ตลอดเวลาครับ</p>
-                <a href="mailto:poonsom.mua@spumail.net" class="email-link">poonsom.mua@spumail.net</a>
+
+        <!-- Hobby -->
+        <section class="section">
+
+            <h2>🎮 งานอดิเรก</h2>
+
+            <div class="hobby-list">
+
+                <div class="hobby">
+                    🎮 เล่นเกม
+                </div>
+
+                <div class="hobby">
+                    🛒 ขายของ
+                </div>
+
+                <div class="hobby">
+                    🐱 เล่นกับแมว
+                </div>
+
             </div>
+
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>© 2026 Poonsom Muangsri. Designed with minimal aesthetic.</p>
-        </footer>
+
+        <!-- Contact -->
+        <section class="section contact" id="contact">
+
+            <h2>📫 ติดต่อฉัน</h2>
+
+            <p>
+                Email: poonsom.mua@spumail.net
+            </p>
+
+            <a href="mailto:poonsom.mua@spumail.net">
+                ส่งอีเมล
+            </a>
+
+        </section>
 
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        © 2026 PoonSom MuangSri
+
+    </footer>
+
 
 </body>
 </html>
