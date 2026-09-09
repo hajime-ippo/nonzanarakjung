@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poonsom Muangsri - Personal Website</title>
-    <!-- โหลดฟอนต์ Prompt จาก Google Fonts -->
+    <title>Poonsom Muangsri - Minimalist Portfolio</title>
+    <!-- Google Fonts: Prompt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset & Variable */
+        /* Minimalist CSS Reset & Variable */
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --primary: #38bdf8;
-            --accent: #818cf8;
-            --radius: 12px;
+            --bg-color: #fafafa;
+            --card-bg: #ffffff;
+            --text-main: #18181b;
+            --text-muted: #71717a;
+            --border-color: #e4e4e7;
+            --accent-color: #27272a;
+            --tag-bg: #f4f4f5;
         }
 
         * {
@@ -30,157 +30,157 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding-bottom: 50px;
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 60px 20px;
         }
 
         /* Container */
         .container {
-            max-width: 900px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        /* Header / Hero Section */
-        header {
-            text-align: center;
-            padding: 60px 0 40px;
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+        /* Header / Profile */
+        .profile-header {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            margin: 0 auto 20px;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+            gap: 24px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+            background-color: #f1f1f1;
+            flex-shrink: 0;
         }
 
-        .subtitle {
-            color: var(--primary);
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 12px;
+        .profile-info h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
-        .bio {
+        .profile-info .faculty {
             color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
             font-size: 0.95rem;
+            margin-top: 2px;
         }
 
-        /* Section Layout */
+        .profile-info .email-badge {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            background-color: var(--tag-bg);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .profile-info .email-badge:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+        }
+
+        /* Sections */
         section {
-            margin-top: 40px;
+            margin-top: 36px;
         }
 
         .section-title {
-            font-size: 1.4rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
         }
 
-        /* Cards & Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: var(--radius);
-            border: 1px solid #334155;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
+        /* About Text */
+        .about-text {
+            font-size: 0.95rem;
+            color: #3f3f46;
         }
 
         /* Skills Tags */
-        .skills-wrapper {
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .tag {
-            background-color: #334155;
-            color: #e2e8f0;
+        .skill-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            font-weight: 400;
+        }
+
+        /* Hobbies Cards */
+        .hobby-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .hobby-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .hobby-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .hobby-card h3 {
+            font-size: 0.95rem;
             font-weight: 500;
-        }
-
-        .tag.highlight {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        /* Hobby Card */
-        .hobby-item {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 8px;
+            margin-bottom: 4px;
         }
 
-        .hobby-icon {
-            font-size: 2rem;
-            background-color: #334155;
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Footer / Contact */
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
+        .hobby-card p {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
-        .contact-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 24px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: #0f172a;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: opacity 0.2s;
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .contact-btn:hover {
-            opacity: 0.9;
+        footer a {
+            color: var(--text-main);
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -188,62 +188,61 @@
 
     <div class="container">
         <!-- Header Section -->
-        <header>
-            <div class="profile-img">👨‍💻</div>
-            <h1>นายพูนสม ม่วงศรี</h1>
-            <p class="subtitle">คณะเทคโนโลยีสารสนเทศ | สาขานวัตกรรมธุรกิจดิจิทัล</p>
-            <p class="bio">
-                สวัสดีครับ! ผมเป็นนักศึกษาที่สนใจด้านการพัฒนาเว็บ เทคโนโลยีสารสนเทศ และนวัตกรรมธุรกิจดิจิทัล พร้อมเปิดรับการเรียนรู้สิ่งใหม่ๆ เสมอ
-            </p>
+        <header class="profile-header">
+            <!-- ใส่ชื่อไฟล์รูปของคุณแทนที่ profile.jpg ตรงนี้ได้เลยครับ -->
+            <img src="profile.jpg" alt="นายพูนสม ม่วงศรี" class="profile-avatar">
+            
+            <div class="profile-info">
+                <h1>นายพูนสม ม่วงศรี</h1>
+                <p class="faculty">คณะเทคโนโลยีสารสนเทศ <br>สาขานวัตกรรมธุรกิจดิจิทัล</p>
+                <a href="mailto:poonsom.mua@spumail.net" class="email-badge">✉️ poonsom.mua@spumail.net</a>
+            </div>
         </header>
+
+        <!-- About Section -->
+        <section>
+            <h2 class="section-title">เกี่ยวกับฉัน</h2>
+            <p class="about-text">
+                สวัสดีครับ ผมนักศึกษาคณะเทคโนโลยีสารสนเทศ มีความสนใจด้านเทคโนโลยีสารสนเทศ เว็บไซต์ และการประยุกต์ใช้นวัตกรรมดิจิทัลเพื่อธุรกิจ มุ่งมั่นพัฒนาทักษะการเขียนโปรแกรมและการเรียนรู้สิ่งใหม่ๆ เสมอ
+            </p>
+        </section>
 
         <!-- Skills Section -->
         <section>
-            <h2 class="section-title">💻 ทักษะและความสามารถ (Skills)</h2>
-            <div class="skills-wrapper">
-                <span class="tag highlight">HTML</span>
-                <span class="tag highlight">CSS</span>
-                <span class="tag">Java</span>
-                <span class="tag">C Language</span>
+            <h2 class="section-title">ทักษะความสามารถ</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C Language</span>
+                <span class="skill-tag">Digital Business</span>
+                <span class="skill-tag">E-Commerce</span>
             </div>
         </section>
 
         <!-- Hobbies Section -->
         <section>
-            <h2 class="section-title">🎮 งานอดิเรกและความสนใจ (Hobbies)</h2>
-            <div class="grid">
-                <div class="card hobby-item">
-                    <div class="hobby-icon">🎮</div>
-                    <div>
-                        <h3>เล่นเกม</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem;">ผ่อนคลายและฝึกการวางแผนผ่านการเล่นเกม PC/Console</p>
-                    </div>
+            <h2 class="section-title">งานอดิเรก</h2>
+            <div class="hobby-list">
+                <div class="hobby-card">
+                    <h3>🎮 เล่นเกม</h3>
+                    <p>ผ่อนคลายความเครียด ฝึกทักษะการวางแผนและการทำงานร่วมกับผู้อื่น</p>
                 </div>
-
-                <div class="card hobby-item">
-                    <div class="hobby-icon">🛍️</div>
-                    <div>
-                        <h3>ขายของ / E-Commerce</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem;">ขายของ</p>
-                    </div>
+                <div class="hobby-card">
+                    <h3>🛍️ ขายของ</h3>
+                    <p>ศึกษาและทดลองทำธุรกิจออนไลน์ การจัดการสินค้าและการตลาดดิจิทัล</p>
                 </div>
-
-                <div class="card hobby-item">
-                    <div class="hobby-icon">🐱</div>
-                    <div>
-                        <h3>เล่นกับแมว</h3>
-                        <p style="color: var(--text-muted); font-size: 0.85rem;">ทาสแมว ใช้เวลาว่างในการดูแลและเล่นกับน้องแมว</p>
-                    </div>
+                <div class="hobby-card">
+                    <h3>🐱 เล่นกับแมว</h3>
+                    <p>ใช้เวลาว่างในการดูแลและผ่อนคลายร่วมกับน้องแมว</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section / Footer -->
+        <!-- Footer -->
         <footer>
-            <h2 style="font-size: 1.2rem; color: var(--text-color);">📬 ติดต่อผม</h2>
-            <p style="margin-top: 5px;">สนใจร่วมงาน หรือพูดคุยแลกเปลี่ยนเทคโนโลยี</p>
-            <a href="mailto:your.email@example.com" class="contact-btn">ส่งอีเมลหาผม</a>
-            <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Poonsom Muangsri. All rights reserved.</p>
+            <p>ติดต่อสอบถามเพิ่มเติม: <a href="mailto:poonsom.mua@spumail.net">poonsom.mua@spumail.net</a></p>
+            <p style="margin-top: 8px;">© 2026 Poonsom Muangsri. All rights reserved.</p>
         </footer>
     </div>
 
