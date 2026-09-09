@@ -1,53 +1,254 @@
-# 🚀 Hi there, I'm Poonsom Muangsri (พูนสม ม่วงศรี) 👋
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poonsom Muangsri - Personal Website</title>
+    <!-- โหลดฟอนต์ Prompt จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Variable */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #38bdf8;
+            --accent: #818cf8;
+            --radius: 12px;
+        }
 
-🎓 **Digital Business Innovation & IT Student**  
-กำลังศึกษาในคณะเทคโนโลยีสารสนเทศ สาขานวัตกรรมธุรกิจดิจิทัล มีความสนใจในการพัฒนาเว็บ และเทคโนโลยีดิจิทัลสำหรับธุรกิจ
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
 
----
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
 
-### 💻 About Me
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-- 🏫 **Education:** นักศึกษาคณะเทคโนโลยีสารสนเทศ สาขานวัตกรรมธุรกิจดิจิทัล
-- 🎯 **Focus:** Web Development, Programming Fundamentals & Digital Business Solutions
-- 🎮 **Hobbies:** เล่นเกม, เล่นกับแมว 🐱, ทำธุรกิจ/ขายของออนไลน์
-- ⚡ **Fun Fact:** ทาสแมวที่ชอบการแก้โจทย์และเรียนรู้เทคโนโลยีใหม่ๆ
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
 
----
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
 
-### 🛠️ Skills & Knowledge
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-#### 💻 Programming & Web Technologies
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+        .subtitle {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
 
-#### 📊 Business & Tools
-![Digital Business](https://img.shields.io/badge/Digital_Business-0052CC?style=for-the-badge&logo=googleanalytics&logoColor=white)
-![E-Commerce](https://img.shields.io/badge/E--Commerce-232F3E?style=for-the-badge&logo=shoppingcart&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+        .bio {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 0.95rem;
+        }
 
----
+        /* Section Layout */
+        section {
+            margin-top: 40px;
+        }
 
-### 🎯 Interests & Hobbies
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 8px;
+        }
 
-- 🎮 **Gaming:** ชอบเล่นเกมคอมพิวเตอร์และผ่อนคลายกับเกมหลากหลายแนว
-- 🛍️ **Online Selling / E-Commerce:** สนใจเรื่องการขายของและการทำธุรกิจออนไลน์
-- 🐾 **Cat Lover:** ทาสแมวตัวจริง ชอบใช้เวลาว่างเล่นและดูแลน้องแมว
+        /* Cards & Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
----
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid #334155;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
 
-### 📊 GitHub Stats
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+        }
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=tokyonight" alt="Top Languages" width="48%" />
-</p>
+        /* Skills Tags */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
----
+        .tag {
+            background-color: #334155;
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-### 📬 Connect with Me
+        .tag.highlight {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
 
-- 📧 **Email:** your.email@example.com
-- 💼 **LinkedIn:** [linkedin.com/in/your-profile](https://linkedin.com)
+        /* Hobby Card */
+        .hobby-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            background-color: #334155;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer / Contact */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #0f172a;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="profile-img">👨‍💻</div>
+            <h1>นายพูนสม ม่วงศรี</h1>
+            <p class="subtitle">คณะเทคโนโลยีสารสนเทศ | สาขานวัตกรรมธุรกิจดิจิทัล</p>
+            <p class="bio">
+                สวัสดีครับ! ผมเป็นนักศึกษาที่สนใจด้านการพัฒนาเว็บ เทคโนโลยีสารสนเทศ และนวัตกรรมธุรกิจดิจิทัล พร้อมเปิดรับการเรียนรู้สิ่งใหม่ๆ เสมอ
+            </p>
+        </header>
+
+        <!-- Skills Section -->
+        <section>
+            <h2 class="section-title">💻 ทักษะและความสามารถ (Skills)</h2>
+            <div class="skills-wrapper">
+                <span class="tag highlight">HTML5</span>
+                <span class="tag highlight">CSS3</span>
+                <span class="tag">Java</span>
+                <span class="tag">C Language</span>
+                <span class="tag">Digital Business</span>
+                <span class="tag">E-Commerce</span>
+                <span class="tag">Git & GitHub</span>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section>
+            <h2 class="section-title">🎮 งานอดิเรกและความสนใจ (Hobbies)</h2>
+            <div class="grid">
+                <div class="card hobby-item">
+                    <div class="hobby-icon">🎮</div>
+                    <div>
+                        <h3>เล่นเกม</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">ผ่อนคลายและฝึกการวางแผนผ่านการเล่นเกม PC/Console</p>
+                    </div>
+                </div>
+
+                <div class="card hobby-item">
+                    <div class="hobby-icon">🛍️</div>
+                    <div>
+                        <h3>ขายของ / E-Commerce</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">สนใจการทำธุรกิจ การขายของ</p>
+                    </div>
+                </div>
+
+                <div class="card hobby-item">
+                    <div class="hobby-icon">🐱</div>
+                    <div>
+                        <h3>เล่นกับแมว</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;">ทาสแมว ใช้เวลาว่างในการดูแลและเล่นกับน้องแมว</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section / Footer -->
+        <footer>
+            <h2 style="font-size: 1.2rem; color: var(--text-color);">📬 ติดต่อผม</h2>
+            <p style="margin-top: 5px;">สนใจร่วมงาน หรือพูดคุยแลกเปลี่ยนเทคโนโลยี</p>
+            <a href="mailto:your.email@example.com" class="contact-btn">ส่งอีเมลหาผม</a>
+            <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Poonsom Muangsri. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
